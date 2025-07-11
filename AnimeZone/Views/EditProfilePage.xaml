@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AnimeZone.Views.EditProfilePage">
+
+    <StackLayout Spacing="10"
+                 Padding="35"
+                 BackgroundColor="#0D0118">
+        <Image Source="https://shorturl.at/hvHJ6"
+               Margin="10,20,0,0"
+               HeightRequest="220"
+               WidthRequest="300"
+               HorizontalOptions="Center"
+               Aspect="Fill"/>
+
+        <Label Text="Name"
+               Margin="5"
+               TextColor="white"
+               Padding="0,0,0,0"/>
+
+        <Frame BorderColor="HotPink"
+               CornerRadius="10"
+               Padding="0">
+
+            <StackLayout Orientation="Horizontal">
+
+                <Entry Text="{Binding Name}"
+                       TextColor="Black"
+                       Placeholder="{Binding Name}"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Start"   
+                       x:Name="itemNameLabel"/>
+
+            </StackLayout>
+
+        </Frame>
+
+        <Label Text="Email"
+               Margin="5"
+               TextColor="White"
+               Padding="0,0,0,0"/>
+
+        <Frame BorderColor="HotPink"
+               CornerRadius="10"
+               Padding="0">
+
+            <StackLayout Orientation="Horizontal">
+                <Entry Text="{Binding Email}"
+                       Placeholder="{Binding Email}"
+                       TextColor="Black"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Start"
+                       x:Name="itemEmailLabel"/>
+            </StackLayout>
+
+        </Frame>
+
+        <Label Text="Password"
+               Margin="5"
+               TextColor="White"
+               Padding="0,0,0,0"/>
+
+        <Frame BorderColor="HotPink"
+               CornerRadius="10"
+               Padding="0">
+
+            <StackLayout Orientation="Horizontal">
+
+                <Entry Text="{Binding Password}"
+                       Placeholder="{Binding Password}"
+                       TextColor="Black"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Start"
+                       x:Name="itemPasswordLabel"/>
+
+            </StackLayout>
+
+        </Frame>
+
+        <Label Text="Confirm Password"
+               Margin="5"
+               TextColor="White"
+               Padding="0,0,0,0"/>
+
+        <Frame BorderColor="HotPink"
+               CornerRadius="10"
+               Padding="0">
+
+            <StackLayout Orientation="Horizontal">
+
+                <Entry Text="{Binding Password}"
+                       Placeholder="{Binding Password}"
+                       TextColor="Black"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Start"
+                       x:Name="itemConfirmPasswordLabel"/>
+            </StackLayout>
+
+        </Frame>
+
+        <Button Text="Confirm"
+                FontSize="20"
+                BackgroundColor="#912CB5"
+                BorderWidth="1"
+                BorderColor="HotPink"
+                CornerRadius="20"
+                Margin="40,15,40,0"
+                WidthRequest="320"
+                Clicked="ChangeProfile_Clicked"
+                x:Name="ChangeProfile"/>
+    </StackLayout>
+</ContentPage>

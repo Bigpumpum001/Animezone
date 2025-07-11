@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AnimeZone.Views.PaymentPage"
+             Title="Payment">
+
+    <ScrollView BackgroundColor="#0D0118">
+        <StackLayout>
+            <Border Margin="30"
+                    BackgroundColor="#51006D"
+                    HeightRequest="60"
+                    Stroke="#912CB5"
+                    StrokeShape="RoundRectangle 30,30,30,30"
+                    StrokeThickness="2"
+                    WidthRequest="300">
+
+                <Border.Shadow>
+                    <Shadow Brush="MediumPurple"
+                            Opacity=".7"
+                            Radius="50"
+                            Offset="0,0"/>
+                </Border.Shadow>
+
+                <Label VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       x:Name="amountPaidLabel"
+                       FontSize="16"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       Padding="10,0,10,0"/>
+
+            </Border>
+
+            <Label Text="Pay with Thai QR Payment via Kbank"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   FontSize="18"/>
+
+            <Image Source="https://shorturl.at/aeikR"
+                   WidthRequest="350"
+                   HeightRequest="300"
+                   Margin="30"/>
+
+            <Label Text="AnimeZone Company"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   FontSize="18"
+                   FontAttributes="Bold"/>
+
+            <Label Text="090 - x - xxxxx - x (Kbank)"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   FontSize="18"/>
+
+            <Border Margin="30"
+                  BackgroundColor="#51006D"
+                  HeightRequest="183"
+                  Stroke="White"
+                  StrokeShape="RoundRectangle 30,30,30,30"
+                  StrokeThickness="0.5"
+                  WidthRequest="300">
+
+                <Border.Shadow>
+                    <Shadow Brush="MediumPurple"
+                            Opacity=".7"
+                            Radius="50"
+                            Offset="0,0"/>
+                </Border.Shadow>
+
+                <StackLayout>
+
+                    <Label Text="Order details"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           Padding="30,10,0,10"
+                           FontSize="16"/>
+
+                    <Label  x:Name="totalLabel"
+                            TextColor="White"
+                            Padding="30,10,0,10"
+                            FontSize="15"/>
+
+
+                    <Label x:Name="shippingLabel"
+                            TextColor="White"
+                            Padding="30,10,0,10"
+                            FontSize="15"/>
+
+
+                    <Label x:Name="priceshippingLabel"
+                            TextColor="White"
+                            Padding="30,10,0,10"
+                            FontSize="15"
+                            FontAttributes="Bold"/>
+
+                </StackLayout>
+            </Border>
+
+            <Label Text="Please send us the tranfer receipt to"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   FontSize="18"/>
+
+            <ImageButton WidthRequest="120"
+                         HeightRequest="120"
+                         Margin="30"
+                         Command="{Binding LineCommand}"
+                         CommandParameter="https://line.me/ti/p/E-ioUg2Td9"
+                         Source="https://shorturl.at/hswHZ"
+                         Aspect="AspectFit" />
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

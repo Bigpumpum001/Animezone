@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AnimeZone.Views.ProfilePage">
+
+
+    <Shell.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Edit" 
+                    TextColor="White"
+                    Margin="260,0,0,0"
+                    FontSize="Body"
+                    Clicked="OnEditClicked" />
+        </StackLayout>
+    </Shell.TitleView>
+
+    <StackLayout Spacing="10"
+                 Padding="35"
+                 BackgroundColor="#0D0118">
+
+        <Image Source="https://shorturl.at/hvHJ6"
+               Margin="10,50,0,0"
+               HeightRequest="250"
+               WidthRequest="310"
+               HorizontalOptions="Center"
+               Aspect="Fill"/>
+
+        <Label Text="Name"
+               Margin="0"
+               TextColor="white"
+               Padding="0,5,0,5"/>
+
+        <Frame BorderColor="HotPink"
+               CornerRadius="10"
+               Padding="0">
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="{Binding Name}"
+                       TextColor="black"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Start"
+                       Padding="10"
+                       x:Name="itemNameLabel"/>
+            </StackLayout>
+
+        </Frame>
+
+        <Label Text="Email"
+               Margin="0"
+               TextColor="white"
+               Padding="0,5,0,5"/>
+                
+        <Frame BorderColor="HotPink"
+               CornerRadius="10"
+               Padding="0">
+
+            <StackLayout Orientation="Horizontal">
+
+                <Label Text="{Binding Email}"
+                       TextColor="Black"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Start"
+                       Padding="10"
+                       x:Name="itemEmailLabel"/>
+            </StackLayout>
+        </Frame>
+
+        <Label Text="Password"
+               Margin="0"
+               TextColor="White"
+               Padding="0,5,0,5"/>
+               
+        <Frame BorderColor="HotPink"
+               CornerRadius="10"
+               Padding="0">
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="**********"
+                       TextColor="Black"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Start"
+                       Padding="10"
+                       x:Name="itemPasswordLabel"/>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentPage>

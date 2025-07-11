@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AnimeZone.Views.SignUpPage"
+             >
+
+    <StackLayout Spacing="7"
+                 BackgroundColor="#0D0118">
+
+        <Label Text="Sign up"
+               FontSize="35"
+               HorizontalOptions="Center"
+               TextColor="#E9ABFF"/>
+
+        <Image Source="https://shorturl.at/bfiy2"
+               HeightRequest="250"
+               WidthRequest="290"
+               Aspect="Fill"/>
+
+        <Frame BorderColor="HotPink"
+               CornerRadius="10"
+               Padding="0"
+               Margin="40,15,40,0">
+
+            <Entry Placeholder="Name"
+                   x:Name="YourName"
+                   Text="{Binding Name}"
+                   PlaceholderColor="#E9ABFF"
+                   BackgroundColor="White"/>
+        </Frame>
+
+        <Frame BorderColor="HotPink"
+               CornerRadius="10"
+               Padding="0"
+               Margin="40,15,40,0">
+
+            <Entry Placeholder="Email"
+                   x:Name="YourEmail"
+                   Keyboard="Email"
+                   BackgroundColor="White"
+                   Text="{Binding Email}"
+                   PlaceholderColor="#E9ABFF"/>
+        </Frame>
+
+        <Frame BorderColor="HotPink"
+               CornerRadius="10"
+               Padding="0"
+               Margin="40,15,40,0">
+
+            <Entry Placeholder="Password"
+                   PlaceholderColor="#E9ABFF"
+                   BackgroundColor="White"
+                   Text="{Binding Password}"
+                   x:Name="Password"
+                   MaxLength="15"
+                   IsPassword="True"/>
+        </Frame>
+
+        <Frame BorderColor="HotPink"
+               CornerRadius="10"
+               Padding="0"
+               Margin="40,15,40,0">
+
+            <Entry Placeholder="Confirm Password"
+                   BackgroundColor="White"
+                   PlaceholderColor="#E9ABFF"
+                   Text="{Binding ConfirmPassword}"
+                   x:Name="ConfirmPassword"
+                   MaxLength="15"
+                   IsPassword="True"/>
+        </Frame>
+
+        <Button Text="Sign up"
+                FontSize="20"
+                BackgroundColor="#912CB5"
+                BorderWidth="1"
+                BorderColor="HotPink"
+                CornerRadius="20"
+                Margin="40,15,40,0"
+                Clicked="OnButtonChange"
+                x:Name="ChangePassword"/>
+
+        <Button Text="Already have an account ? Log in"
+                Clicked="OnLogInClicked"
+                HorizontalOptions="Center"
+                Margin="0,0,0,0" />
+
+        <Label x:Name="PasswordErrorLabel"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               TextColor="White"/>
+
+
+        <Label x:Name="PasswordSuccessLabel"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               TextColor="White"/>
+    </StackLayout>
+</ContentPage >

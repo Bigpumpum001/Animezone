@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="AnimeZone.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:AnimeZone.Views"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.TabBarIsVisible="False"
+    FlyoutBackgroundColor="Black">
+
+
+    <Shell.FlyoutHeader>
+        <StackLayout HeightRequest="60"
+                     BackgroundColor="#0D0118">
+            <Image Source="https://shorturl.at/elpNS"
+                   HeightRequest="46"
+                   WidthRequest="233"
+                   Aspect="AspectFill"
+                   Margin="0,10,0,10"/>
+        </StackLayout>
+
+    </Shell.FlyoutHeader>
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+
+        <ShellContent ContentTemplate="{DataTemplate local:HomePage}"
+                      Route="HomePage"
+                      FlyoutIcon="https://shorturl.at/dHMRU"
+                      Title="Home"/>
+
+        <ShellContent ContentTemplate="{DataTemplate local:ProfilePage}"
+                      Route="ProfilePage"
+                      FlyoutIcon="https://shorturl.at/qBIX8"
+                      Title="Profile"/>
+
+        <ShellContent Title="Anime"
+                      ContentTemplate="{DataTemplate local:AnimePage}"
+                      FlyoutIcon="https://shorturl.at/lrsP3"
+                      Route="AnimePage" />
+
+        <ShellContent Title="Character"
+                      ContentTemplate="{DataTemplate local:CharacterPage}"
+                      FlyoutIcon="https://shorturl.at/bfktF"
+                      Route="CharacterPage" />
+
+        <ShellContent Title="Manga"
+                      ContentTemplate="{DataTemplate local:MangaPage}"
+                      FlyoutIcon="https://shorturl.at/bozAX"
+                      Route="MangaPage" />
+
+        <ShellContent Title="Favorite"
+                      ContentTemplate="{DataTemplate local:FavoritePage}"
+                      FlyoutIcon="https://shorturl.at/ltTW2"
+                      Route="FavoritePage" />
+
+        <ShellContent Title="Cart"
+                      FlyoutIcon="https://shorturl.at/AEGU7"
+                      ContentTemplate="{DataTemplate local:CartPage}"
+                      Route="CartPage" />
+
+    </FlyoutItem>
+
+
+    <MenuItem Text="Help"
+              IconImageSource="https://shorturl.at/nwBT6"
+              Command="{Binding HelpCommand}"
+              CommandParameter="https://www.bu.ac.th"/>
+
+    <MenuItem Text="Community"
+              IconImageSource="https://shorturl.at/kGXY0"
+              Command="{Binding CommunityCommand}"
+              CommandParameter="https://shorturl.at/cmoA0"/>
+
+    <MenuItem Text="Log out"
+              Clicked="OnLogout"
+              IconImageSource="https://shorturl.at/inDP2"
+              Command="{Binding OpenLinkCommand}"/>
+
+    <Shell.FlyoutFooter>
+
+        <StackLayout HeightRequest="30"
+                     Padding="5">
+            <Label Text="My App @ 1.0"
+                   TextColor="White"
+                   HorizontalOptions="Center"/>
+        </StackLayout>
+
+    </Shell.FlyoutFooter>
+</Shell>
+

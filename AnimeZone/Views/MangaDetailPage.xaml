@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"   
+             x:Class="AnimeZone.Views.MangaDetailPage"
+             Title="MangaDetailPage">
+
+    <Shell.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Column="1"
+                         Orientation="Horizontal">
+
+                <Button CornerRadius="10"
+                        HeightRequest="40"
+                        WidthRequest="60"
+                        Margin="0,0,20,0"
+                        ImageSource="https://shorturl.at/djruC"
+                        Clicked="OnCart"/>
+
+            </StackLayout>
+
+            <StackLayout Grid.Column="0"
+                         Orientation="Horizontal"
+                         HorizontalOptions="End">
+
+                <Label FontSize="12"
+                       x:Name="CountCart"
+                       TextColor="White"
+                       Margin="250,0,0,0"
+                       VerticalOptions="Center" 
+                       HorizontalOptions="End"/>
+
+            </StackLayout>
+        </Grid>
+    </Shell.TitleView>
+
+    <ScrollView>
+        <Grid BackgroundColor="#0D0118">
+
+            <StackLayout>
+
+                <Border Margin="30"
+                        BackgroundColor="#311B45"
+                        HeightRequest="309"
+                        Stroke="#6E557C"
+                        StrokeShape="RoundRectangle 30,30,30,30"
+                        StrokeThickness="2"
+                        WidthRequest="320">
+
+                    <Image Source="{Binding SelectedManga.Img}"
+                           Aspect = "AspectFill"/>
+
+                    <Border.Shadow>
+                        <Shadow Brush="MediumPurple"
+                                Opacity=".7"
+                                Radius="50"
+                                Offset="0,0"/>
+                    </Border.Shadow>
+                </Border>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0"
+                           Text="{Binding SelectedManga.Name}"
+                           TextColor="White"
+                           FontSize="19"
+                           FontAttributes="Bold"
+                           Padding="30,0,0,15" />
+                </Grid>
+
+                <Label Text="Description"
+                       TextColor="White"
+                       Padding="30,15,0,10"
+                       FontSize="16"
+                       FontAttributes="Bold"/>
+
+                <Label Text="{Binding SelectedManga.Description}"
+                       TextColor="White"
+                       Padding="30,0,30,10"
+                       FontSize="14"/>
+
+                <Border Margin="30"
+                        BackgroundColor="#51006D"
+                        HeightRequest="60"
+                        Stroke="#912CB5"
+                        StrokeShape="RoundRectangle 30,30,30,30"
+                        StrokeThickness="2"
+                        WidthRequest="350">
+
+                    <Border.Shadow>
+                        <Shadow Brush="MediumPurple"
+                                Opacity=".7"
+                                Radius="50"
+                                Offset="0,0"/>
+                    </Border.Shadow>
+
+                    <StackLayout Orientation="Horizontal"
+                                 HorizontalOptions="CenterAndExpand">
+
+                        <Label Grid.Row="1"
+                               Grid.Column="1"
+                               Grid.ColumnSpan="1"
+                               TextColor="White"
+                               Text="Price"
+                               Padding="10,0,0,0"
+                               VerticalOptions="Center"
+                               FontSize="18"/>
+
+                        <Label Grid.Row="1"
+                               Grid.Column="1"
+                               Grid.ColumnSpan="2"
+                               VerticalOptions="Center"
+                               Text="{Binding SelectedManga.Price ,StringFormat='THB {0}'}"
+                               FontSize="18"
+                               TextColor="White"
+                               FontAttributes="Bold"
+                               Padding="30,0,30,0"/>
+
+                        <Button Grid.Row="1"
+                                Grid.Column="1"
+                                Grid.ColumnSpan="3"
+                                BackgroundColor="White"
+                                BorderWidth="1"
+                                BorderColor="HotPink"
+                                CornerRadius="40"
+                                Margin="8"
+                                Padding="10"
+                                x:Name="AddToCart"
+                                Text="Add to Cart"
+                                TextColor="#51006D"
+                                FontAttributes="Bold"
+                                Clicked="OnAddToCart"
+                                VerticalOptions="Center" />
+
+                    </StackLayout>
+                </Border>
+            </StackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>
